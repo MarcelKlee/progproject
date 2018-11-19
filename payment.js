@@ -44,12 +44,16 @@ function validate(myForm) {
     if (document.myForm.cardType.selectedIndex == "1") {
         if (!visaRegEx.test(myForm.ccNum.value)) {
             alert("Error: Please enter valid Visa card number");
+            document.myForm.ccNum.focus();
+            return false;
         }
     }
     //If Mastercard selected, check if input in cardnumber field matches Mastercard regex
     if (document.myForm.cardType.selectedIndex == "2") {
         if (!mastercardRegEx.test(myForm.ccNum.value)) {
             alert("Error: Please enter valid Mastercard number");
+            document.myForm.ccNum.focus();
+            return false;
         }
     }
     //If expiry month field is empty or value is greater than or equal to 13, display alert
@@ -59,7 +63,7 @@ function validate(myForm) {
         return false;
     }
     // //If expiry year is empty or value is less than 2018 or greater than 2022, display alert
-    if (document.myForm.expy.value == "" || document.myForm.expy.value < 2018 || document.myForm.expy.value>2022) {
+    if (document.myForm.expy.value == "" || document.myForm.expy.value < 2018 || document.myForm.expy.value > 2022) {
         alert("Please enter valid year");
         document.myForm.expy.focus();
         return false;
@@ -84,4 +88,3 @@ function validate(myForm) {
     }
     return true;
 }
-
