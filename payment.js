@@ -10,96 +10,78 @@ class Card {
         this.expy = expy;
         this.cvc = cvc;
     }
-    validate() {
-        
-    }
 }
-//Ask how to use this class?
-//Is there easier way to validate other than if statements?
-//Ask about how to make if statement for checkbox?
 
-//Initialize an empty array
-var cards = [];
-//Fill it up with few cards
-cards.push(new Card('Visa', 'Twinkle', 'Kahlon', '4571012301230123', '12', '2018', '123'));
-cards.push(new Card('Mastercard', 'Victor', 'Lluva', '5571012301230123', '11', '2019', '321'));
-
-//var submit = document.getElementById("submit");
-
-//Create a function to validate the basic form
-//It should prevent user from submitting empty form
-var visaRegEx = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
-
-function validate() {
+//Declare function to validate my form and declare variables
+function validate(myForm) {
     //Bind the input fields and get the value
-    var cardtype = document.getElementById('cardType');
+    var cardType = document.getElementById('cardType');
     var cardholderName = document.getElementById('ccName');
     var cardnumber = document.getElementById('ccNum');
     var expm = document.getElementById('expm');
     var expy = document.getElementById('expy');
     var cvc = document.getElementById('cvc');
     var checkbox = document.getElementById('terms');
-
-    //var card = cards[i];
+    var visaRegEx = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
+    var mastercardRegEx = /^(?:5[1-5][0-9]{14})$/;
+    var nameRegex = /^([a-zA-z\s]{4,32})$/
 
     //Make if statement to declare what it should match the input with for each field
-    //This will work, once user clicks on submit button
-    //First if statement is checking, if selection's value is -1, then alert shall display
-    if (document.myForm.cardType.value == "0") {
+    //This will work, once user clicks on SUBMIT button or presses Enter
+    //If selection's value is 0, then alert shall display
+    if (document.myForm.cardType.selectedIndex == "0") {
         alert("Please select a card");
-        document.myForm.cardtype.focus();
+        document.myForm.cardType.focus();
         return false;
     }
-    //If user selects Visa cardtype, check matching with regex for Visa -- NOT WORKING
-
-    //If cardnumber field is empty, display alert
-
+    // If cardnumber field is empty, display alert
     if (document.myForm.ccNum.value == "") {
-        alert("Please enter valid cardnumber");
+        alert("Card no. field must not be empty");
         document.myForm.ccNum.focus();
         return false;
     }
-    // //If expiry month field is empty, display alert
-    if (document.myForm.expm.value == "") {
-        alert("Numbers only, format MM");
+    //If Visa selected check if input in cardnumber field matches Visa regex
+    if (document.myForm.cardType.selectedIndex == "1") {
+        if (!visaRegEx.test(myForm.ccNum.value)) {
+            alert("Error: Please enter valid Visa card number");
+        }
+    }
+    //If Mastercard selected, check if input in cardnumber field matches Mastercard regex
+    if (document.myForm.cardType.selectedIndex == "2") {
+        if (!mastercardRegEx.test(myForm.ccNum.value)) {
+            alert("Error: Please enter valid Mastercard number");
+        }
+    }
+    //If expiry month field is empty or value is greater than or equal to 13, display alert
+    if (document.myForm.expm.value == "" || document.myForm.expm.value >= 13) {
+        alert("Enter a valid month");
         document.myForm.expm.focus();
         return false;
     }
-    // //If expiry year is empty, display alert
-    if (document.myForm.expy.value == "") {
+    // //If expiry year is empty or value is less than 2018 or greater than 2022, display alert
+    if (document.myForm.expy.value == "" || document.myForm.expy.value < 2018 || document.myForm.expy.value>2022) {
         alert("Please enter valid year");
         document.myForm.expy.focus();
         return false;
     }
-    // //if CVC field is empty, display alert
+    // //if CVC field is empty, display alert - Any combination of three digits is allowed
     if (document.myForm.cvc.value == "") {
         alert("Please enter valid CVC");
         document.myForm.cvc.focus();
         return false;
     }
-    //    //If firstname text field is empty, display alert
-    if (document.myForm.ccName.value == "") {
+    //If name text field is empty or input does NOT match name regex, display alert
+    if (document.myForm.ccName.value == "" || !nameRegex.test(myForm.ccName.value)) {
         alert("Please enter name as mentioned on the card");
         document.myForm.ccName.focus();
         return false;
     }
-    //To do: If statement for checkbox is checked or not 
+    //If checkbox is not checked, display alert
+    if (document.myForm.terms.checked == false) {
+        alert("Please read and agree to the terms");
+        document.myForm.terms.focus();
+        return false;
+    }
     return true;
 }
-//This code works
 
-//To do: Specify using regex what type of data each field will accept
-//If user enters something different, then error should display
-//Important fields to validate: cardnumber, expiry month/year, cvc
-
-//This validates user can only input alphabets in name with no spaces, no other characters or numbers
-function lettersOnly(input) {
-    var regex = /[^a-z]/gi;
-    input.value = input.value.replace(regex, "");
-}
-
-//Add mouseover function to CVC field - TO do 
-//Add image of card
-function displayMessage (input){
-document.getElementById('cvc')="Number on back";
-}

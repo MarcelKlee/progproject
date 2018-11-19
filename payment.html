@@ -13,10 +13,10 @@
 <h1>Payment details</h1>
 
 <body>
-    <form id="myForm" name="myForm" method="get" novalidate>
+    <form id="myForm" name="myForm" method="get" action="confirmation.html" novalidate onsubmit="return (validate(this))">
         <div>
             <td>Card Type</td><span>*</span></span>
-            <select name="cardType">
+            <select name="cardType" id="cardType" autofocus required>
                 <option value="0">---Please select---</option>
                 <option value="1">Visa</option>
                 <option value="2">Mastercard</option>
@@ -25,25 +25,31 @@
         <br>
         <label for="cardnumber">Card number<span>*</span></label>
         <input type="text" name="ccNum" id="ccNum" maxlength="16" placeholder="1234123412341234">
+        <div id="div2"></div>
         <br><br>
-        <label for="expiry"><b>Expiry details</b></label> <br><br>
-        <label for="expirymonth" required>Expiry month*</span></label></td>
-        <input type="number" name="expm" id="expm" min="1" max="12" placeholder="MM">
-        <label for="expiryyear" required>Expiry year*</span></label></td>
-        <input type="number" name="expy" id="expy" min="2018" placeholder="YYYY">
+        <div id="div3">
+            <label for="expiry"><b>Expiry details</b></label> <br><br>
+            <label for="expirymonth" required>Expiry month*</span></label></td>
+            <input type="number" name="expm" id="expm" min="1" max="12" maxlength="1" placeholder="MM">
+
+            <label for="expiryyear" required>Expiry year*</span></label></td>
+            <input type="number" name="expy" id="expy" min="2018" maxlength="4" placeholder="YYYY">
+        </div>
         <br><br>
-        <label for="cvc">CVC <span class="required" onmouseover="displayMessage(this)">*</span></label>
-        <input type="text" name="cvc" id="cvc" size="3" placeholder="xxx" pattern="^([0-9]{3,4})$" />
-        <br><br>
+        <label for="cvc">CVC <span class="required">*</span></label>
+        <input type="text" name="cvc" id="cvc" maxlength="3" placeholder="xxx" pattern="^([0-9]{3,4})$" />
+        <div id="div5"></div>
+        <br>
         <p>
             <label for="cardHolderDetails"><b>Cardholder details</b><span></span></label>
             <br><br>
             <label for="nameoncard">Name on card</span required>*</label></td>
-            <input type="text" name="ccName" id="ccName" placeholder="John Doe" onkeyup="lettersOnly(this)"/>
-            <br><br>
-            <input type="checkbox" name="terms" id="terms" required> I accept terms and conditions
+            <input type="text" name="ccName" id="ccName" placeholder="John Doe" />
+            <div id="div6"></div>
+            <br>
+            <input type="checkbox" name="terms" id="terms" unchecked="true" required> I accept terms and conditions
             <br> <br>
-            <input type="submit" id="submit" name="submit" value="Submit" onclick="return (validate())">
+            <input type="submit" id="submit" name="submit" value="Click to continue">
         </p>
     </form>
 
