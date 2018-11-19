@@ -72,6 +72,11 @@
       border-radius:0 !important;
       transition: box-shadow 0.5s;
   }
+  .panel-grey {
+    border: 1px solid grey; 
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+}
   .panel:hover {
       box-shadow: 5px 0px 40px rgba(0,0,0, .2);
   }
@@ -90,6 +95,16 @@
       border-bottom-left-radius: 0px;
       border-bottom-right-radius: 0px;
   }
+  .panel-heading-grey {
+    color: #fff !important;
+    background-color: grey !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
   .panel-footer {
       background-color: white !important;
   }
@@ -176,7 +191,11 @@
     }
   }
 
-  .glyphicon.glyphicon-question-sign {
+.glyphicon.glyphicon-question-sign {
     color: #f4511e;
     font-size: 200px;
+}
+.glyphicon.glyphicon-ok {
+    color: #f4511e;
+    font-size: 250px;
 }

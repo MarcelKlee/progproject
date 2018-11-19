@@ -217,7 +217,7 @@
                     <div class="panel-footer">
                         <h3>DKK 15</h3>
                         <h4>per day</h4>
-                        <form action="registration.html">
+                        <form onclick="sub(1)" action="registration.html">
                             <button class="btn btn-lg" type="submit">Sign Up</button>
                         </form>
                     </div>
@@ -236,7 +236,7 @@
                     <div class="panel-footer">
                         <h3>DKK 150</h3>
                         <h4>per month</h4>
-                        <form action="registration.html">
+                        <form onclick="sub(2)" action="registration.html">
                             <button class="btn btn-lg" type="submit">Sign Up</button>
                         </form>
                     </div>
@@ -256,7 +256,7 @@
                     <div class="panel-footer">
                         <h3>DKK 175</h3>
                         <h4>per month</h4>
-                        <form action="registration.html">
+                        <form onclick="sub(3)" action="registration.html">
                             <button class="btn btn-lg" type="submit">Sign Up</button>
                         </form>
                     </div>
@@ -276,7 +276,7 @@
                     <div class="panel-footer">
                         <h3>DKK 200</h3>
                         <h4>per month</h4>
-                        <form action="registration.html">
+                        <form onclick="sub(4)" action="registration.html">
                             <button class="btn btn-lg" type="submit">Sign Up</button>
                         </form>
                     </div>
@@ -338,7 +338,7 @@
                         <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
                     </div>
                     <div class="col-sm-6 form-group">
-                        <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                        <input class="form-control" id="contactemail" name="email" placeholder="Email" type="email" required>
                     </div>
                 </div>
                 <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
@@ -351,36 +351,32 @@
         </div>
     </div>
 
-    <!-- Container (Contact Section) -->
-    <div id="login" class="container-fluid">
-        <h2 class="text-center">CONTACT</h2>
+    <!-- Container (Login Section) -->
+    <div id="login" class="container-fluid bg-grey">
+        <h2 class="text-center">Login</h2>
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-6">
                 <form id="init_form" method="POST" name="myInit">
-                    <h1>Initialize</h1>
-                    <input type="button" value="Initialize" id="submit" onclick="lstInit()" />
+                    <h1>Create Empty DB</h1>
+                    <input type="button" value="Create Empty DB" id="submit" onclick="createEmptyDatabase()" />
+                </form>
+            </div>
+            <div class="col-sm-6">
+                <form id="init_form" method="POST" name="myInit">
+                    <h1>Create pre-filled DB</h1>
+                    <input type="button" value="Create pre-filled DB" id="submit" onclick="createPrefilledDatabase()" />
                 </form>
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-12">
                 <form id="login_form" method="POST" name="myLoginForm">
                     <h1>Login</h1>
                     <label>E-Mail:</label>
-                    <input type="email" name="email" value="max@gmail.com" id="emails">
+                    <input type="email" name="email" value="max@gmail.com" id="email">
                     <label>Password:</label>
                     <input type="text" name="password" value="12345" id="password">
-                    <input type="button" value="Login" id="submit" onclick="lstLogin()" />
-                </form>
-            </div>
-            <div class="col-sm-6">
-                <form id="signup_form" method="POST" name="mySignupForm">
-                    <h1>Sign up</h1>
-                    <label>E-Mail:</label>
-                    <input type="email" name="email" value="test@gmail.com" id="suemail">
-                    <label>Password:</label>
-                    <input type="text" name="password" value="12345" id="supassword">
-                    <input type="button" value="Sign up" id="submit" onclick="lstRegister()" />
+                    <input type="button" value="Login" id="submit" onclick="login()" />
                 </form>
             </div>
         </div>
@@ -444,6 +440,9 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
                 });
             });
         })
+    </script>
+    <script>
+        localStorage.setItem("sub", JSON.stringify("0"));
     </script>
 
 </body>

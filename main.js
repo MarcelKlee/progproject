@@ -1,194 +1,243 @@
 /*
     ######################################################
-    ##### Login and registration using simple ARRAY #####
+    ##### Login and registration using LOCAL STORAGE #####
     ######################################################
+    - Attempt system is missing
+    - Either an empty or pre-filled database needs to be created first to use the login and registration
 */
 
-// Create a class describing all users
-class User {
-    constructor(email, password) {
-        this.email = email;
-        this.password = password;
-    }
+// Clear Local Storage, create an empty Database and reset current User state
+function createEmptyDatabase() {
+    localStorage.clear();
 
-    get email() {
-        return this._email;
-    }
+    var users = [];
 
-    set email(value) {
-        this._email = value;
-    }
+    localStorage.setItem("users", JSON.stringify(users));
+    localStorage.setItem("activeUser", "null");
 }
 
-// Create different users
-var user0 = new User("max@gmail.com", "12345");
-var user1 = new User("lisa@gmail.com", "1234");
+// Clear Local Storage, create a pre-filled Database and reset current User state
+function createPrefilledDatabase() {
+    localStorage.clear();
 
-// Store all users in an Array
-var users = [user0, user1];
+    var users = [];
 
-// Saves the input of the Login form in variables
-// - forwards an existing user to the profile page
-// - denies a non existing user
-function login() {
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
-
-    if (validate(users, email, password) == true) {
-        alert("Login successfully");
-        window.location = "profile.html";
+    user0 = {
+        "firstname": "Michael",
+        "lastname": "Jackson",
+        "birthday": "1958-08-29",
+        "gender": "Male",
+        "address": {
+            "streetname": "King of Pop Street",
+            "streetnumber": "12",
+            "zip": "1234",
+            "city": "Copenhagen",
+            "country": "Denmark"
+        },
+        "contact": {
+            "phone": "0123456789",
+            "email": "mjackson@gmail.com",
+            "password": "12345"
+        },
+        "payment": {
+            "ctype": "Visa",
+            "cnumber": "1234123412341234",
+            "cholder": "Michael Jackson",
+            "cexpiry": "2020-01-01",
+            "csecurity": "123"
+        },
+        "subscription": "4"
     }
-    else {
-        alert("Denied");
+    user1 = {
+        "firstname": "Elvis",
+        "lastname": "Presley",
+        "birthday": "1935-01-08",
+        "gender": "Male",
+        "address": {
+            "streetname": "King of Rock and Roll Street",
+            "streetnumber": "12",
+            "zip": "1234",
+            "city": "Copenhagen",
+            "country": "Denmark"
+        },
+        "contact": {
+            "phone": "0123456789",
+            "email": "epresley@gmail.com",
+            "password": "12345"
+        },
+        "payment": {
+            "ctype": "Visa",
+            "cnumber": "1234123412341234",
+            "cholder": "Elvis Presley",
+            "cexpiry": "2020-01-01",
+            "csecurity": "123"
+        },
+        "subscription": "4"
     }
-}
 
-// Searchs for a combination of "email" and "password" in the existing database "users"
-// - returns "true" for an existing user
-// - returns "false" for a non existing user
-function validate(users, email, password) {
-    for (let index = 0; index < users.length; index++) {
-        if (users[index].email == email && users[index].password == password) {
-            alert("It is user " + index + " who matches.")
-            return true;
-        }
-    }
-    return false;
-}
+    var users = [user0, user1];
 
-function register() {
-    var email = document.getElementById("suemail").value;
-
-    if (userRegistered(email)) {
-        alert("User is already registered.");
-    }
-    else {
-        var user2 = new User(document.getElementById("suemail").value, document.getElementById("supassword").value);
-        users.push(user2);
-        alert("User has been registered");
-    }
-}
-
-function userRegistered(email) {
-    for (let index = 0; index < users.length; index++) {
-        if (users[index].email == email) {
-            alert("It is user " + index + " who matches.")
-            return true;
-        }
-    }
-    return false;
+    localStorage.setItem("users", JSON.stringify(users));
+    localStorage.setItem("activeUser", "null");
 }
 
 /*
     ######################################################
-    ##### Login and registration using LOCAL STORAGE #####
+    ### Active user can be kicked out if not used here ###
     ######################################################
-    - Attempt system is still missing
-    - registration doesn't work
-    - Function "lstInit" needs to be called once to make everything work (not so nice)
 */
-
-// Clear and initialize Local Storage ("Database")
-function lstInit() {
-    localStorage.clear();
-
-    myUser0 = { "email": "max@gmail.com", "password": 12345 };
-    myUser1 = { "email": "lisa@gmail.com", "password": 1234 };
-
-    var myUsers = [myUser0, myUser1];
-
-    // Store JSON objects in LocalStorage
-    localStorage.setItem("myUsers", JSON.stringify(myUsers));
-
-    // "activeEmail" is used to identify a logged in user
-    localStorage.setItem("activeEmail", "null");
-}
-
-
-// Login verification
-function lstLogin() {
-    // Get data from the login form
-    var email = document.getElementById("emails").value;
+// Validate login data and forward user to profile page if successful
+function login() {
+    var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
 
-    alert("Email: " + email + " and Password: " + password);
+    activeUser = localStorage.getItem("activeUser");
 
-    activeEmail = localStorage.getItem("activeEmail");
+    // IF -> User is registered and verified, forward to Profile
+    // ELSE -> Noone is logged in at the moment
+    if (activeUser == "null") {
 
-    /*  
-        IF -> User is registered and verified, forward to Profile
-        ELSE -> Noone is logged in at the moment
-    
-        In future, the if-statement can identify if a user is already logged in and forward the user directly
-        to the profile page. To add that function, just put "activeEmail == "null"" into the if-statement". 
-        Function is deactivated for testing. 
-    */
-    if (true) {
-        /*
-            IF -> User is registered, active user is stored in Local Storage, user gets forwarded to profile
-            ELSE -> User is not registered and gets denied
-        */
-        if (lstValidate(email, password) == true) {
-            localStorage.setItem("activeEmail", email);
-            alert("Login successfully");
+        // IF -> User is registered, active user is stored in Local Storage, user gets forwarded to profile
+        // ELSE -> User is not registered and gets denied
+        if (validate(email, password) == true) {
+
+            // set current user state
+            localStorage.setItem("activeUser", email);
+
+            // forward user to profile
             window.location = "profile.html";
-        }
-        else {
-            alert("Denied");
         }
     }
     else {
-        alert("User is already logged in and will be forwarded to the profile without validation.");
+        alert("User is already logged in and will be forwarded to the profile without validation. Active User = " + activeUser);
         window.location = "profile.html";
     }
 }
 
 // Searchs for a combination of "email" and "password" in the existing database "users"
 // - returns "true" for an existing user
-// - returns "false" for a non existing user
-function lstValidate(email, password) {
+// - returns "false" for a non existing user or a false email, password combination
+function validate(email, password) {
+    users = JSON.parse(localStorage.getItem("users"));
 
-    myUsers = JSON.parse(localStorage.getItem("myUsers"));
-
-    for (let index = 0; index < myUsers.length; index++) {
-        if (myUsers[index].email == email && myUsers[index].password == password) {
-            return true;
+    for (let index = 0; index < users.length; index++) {
+        if (users[index].contact.email == email) {
+            if (users[index].contact.password == password) {
+                alert("Login successfull.");
+                return true;
+            }
+            else {
+                alert("Wrong E-Mail or Password");
+                return false;
+            }
         }
     }
+    alert("User not registered. Please sign up for one of our subscription plans.")
     return false;
 }
 
-function lstRegister() {
-    var email = document.getElementById("suemail").value;
+function signUp() {
+    // Retrieve all data to register the new User
+    var firstname = document.getElementById("firstname").value;
+    var lastname = document.getElementById("lastname").value;
+    var birthday = document.getElementById("birthday").value;
+    var gender = $('input[name=gender]:checked').val();
+    var streetname = document.getElementById("streetname").value;
+    var streetnumber = document.getElementById("streetnumber").value;
+    var zip = document.getElementById("zip").value;
+    var city = document.getElementById("city").value;
+    var country = document.getElementById("country").value;
+    var phone = document.getElementById("phone").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var ctype = $('input[name=ctype]:checked').val();
+    var cnumber = document.getElementById("cnumber").value;
+    var cholder = document.getElementById("cholder").value;
+    var cexpiry = document.getElementById("cexpiry").value;
+    var csecurity = document.getElementById("csecurity").value;
+    var sub = JSON.parse(localStorage.getItem("sub"));
 
-    if (lstUserRegistered(email)) {
-        alert("User is already registered.");
+    if (userExists(email)) {
+
+        alert("User is already registered. Please log in instead.");
+        window.location = "index.html#login";
+
     }
     else {
-        myUsers = JSON.parse(localStorage.getItem("myUsers"));
 
-        var email = document.getElementById("suemail").value;
-        var password = document.getElementById("supassword").value;
+        users = JSON.parse(localStorage.getItem("users"));
 
-        myUser2 = { "email": email, "password": password };
+        newUser = {
+            "firstname": firstname,
+            "lastname": lastname,
+            "birthday": birthday,
+            "gender": gender,
+            "address": {
+                "streetname": streetname,
+                "streetnumber": streetnumber,
+                "zip": zip,
+                "city": city,
+                "country": country
+            },
+            "contact": {
+                "phone": phone,
+                "email": email,
+                "password": password
+            },
+            "payment": {
+                "ctype": ctype,
+                "cnumber": cnumber,
+                "cholder": cholder,
+                "cexpiry": cexpiry,
+                "csecurity": csecurity
+            },
+            "subscription": sub
+        }
 
-        myUsers.push(myUser2);
+        users.push(newUser);
         alert("User has been registered");
 
-        localStorage.clear();
-        localStorage.setItem("myUsers", JSON.stringify(myUsers));
+        localStorage.setItem("users", JSON.stringify(users));
+
+        window.location = "confirmation.html";
     }
 }
 
-function lstUserRegistered(email) {
+// Checks if delivered email is already existent in the database
+function userExists(email) {
 
-    myUsers = JSON.parse(localStorage.getItem("myUsers"));
+    users = JSON.parse(localStorage.getItem("users"));
 
-    for (let index = 0; index < myUsers.length; index++) {
-        if (myUsers[index].email == email) {
+    for (let index = 0; index < users.length; index++) {
+        if (users[index].contact.email == email) {
             alert("It is user " + index + " who matches.")
             return true;
         }
     }
     return false;
+}
+
+// Saves chosen subscription plan for registration to Local Storage
+function sub(plan) {
+    if (plan == 1) {
+        localStorage.setItem("sub", JSON.stringify("1"));
+    }
+    else if (plan == 2) {
+        localStorage.setItem("sub", JSON.stringify("2"));
+    }
+    else if (plan == 3) {
+        localStorage.setItem("sub", JSON.stringify("3"));
+    }
+    else if (plan == 4) {
+        localStorage.setItem("sub", JSON.stringify("4"));
+    }
+    else {
+        alert("Please choose subscription plan on main page first.");
+    }
+}
+
+function logout() {
+    localStorage.setItem("activeUser", "null");
+    alert("Active user set to 'null'");
+    window.location = "index.html";
 }
