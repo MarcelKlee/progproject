@@ -70,78 +70,128 @@
             </div>
         </div>
     </div>
-    <div id="registration" class="container-fluid bg-grey">
-        <h2 class="text-center">Registration</h2>
-        <div class="row">
-            <div class="col-sm-3">
-                <form id="signup_form1" method="POST" name="mySignupForm">
-                    <h3>Personal details</h3>
-                    <label>First name</label><br>
-                    <input type="text" name="firstname" value="Max" id="firstname"><br>
-                    <label>Last name</label><br>
-                    <input type="text" name="lastname" value="Mustermann" id="lastname"><br>
-                    <label>Birthday</label><br>
-                    <input type="date" name="birthday" value="1990-01-01" id="birthday"><br>
-                    <label>Gender</label><br>
-                    <input type="radio" name="gender" value="Male" checked> Male<br>
-                    <input type="radio" name="gender" value="Female"> Female<br>
-                    <input type="radio" name="gender" value="Other"> Other
-                </form>
+    <div class="container-fluid">
+        <h2 class="text-center">Registration (new version)</h2>
+        <form>
+            <legend>Personal Details</legend>
+            <div class="form-row">
+                <div class="form-group col-sm-6">
+                    <label for="firstname">First Name</label>
+                    <input type="text" class="form-control" id="firstname" placeholder="Janet" value="Paul">
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" class="form-control" id="lastname" placeholder="Jackson" value="Kalkbrenner">
+                </div>
             </div>
-            <div class="col-sm-3">
-                <form id="signup_form2" method="POST" name="mySignupForm">
-                    <h3>Home address</h3>
-                    <label>Street name</label><br>
-                    <input type="text" name="streetname" value="Example Street" id="streetname"><br>
-                    <label>Street number</label><br>
-                    <input type="number" name="streetnumber" value="12" id="streetnumber"><br>
-                    <label>ZIP Code</label><br>
-                    <input type="number" name="zip" value="1234" id="zip"><br>
-                    <label>City</label><br>
-                    <input type="text" name="city" value="Copenhagen" id="city"><br>
-                    <label>Country</label><br>
-                    <input type="text" name="country" value="Denmark" id="country">
-                </form>
+            <div class="form-row">
+                <div class="form-group col-sm-9">
+                    <label for="streetname">Street Name</label>
+                    <input type="text" class="form-control" id="streetname" placeholder="Street name" value="Minimal St">
+                </div>
+                <div class="form-group col-sm-3">
+                    <label for="streetnumber">Street Number</label>
+                    <input type="text" class="form-control" id="streetnumber" placeholder="Street number" value="1">
+                </div>
             </div>
-            <div class="col-sm-3">
-                <form id="signup_form3" method="POST" name="mySignupForm">
-                    <h3>Contact details</h3>
-                    <label>Phone number</label><br>
-                    <input type="tel" name="email" value="012345678911" id="phone"><br>
-                    <label>E-Mail</label><br>
-                    <input type="email" name="password" value="max@gmail.com" id="email"><br>
-                    <label>Password</label><br>
-                    <input type="text" name="password" value="12345" id="password"><br>
-                    <label>Password (again)</label><br>
-                    <input type="password" name="email" value="12345" id="passwordcheck">
-                </form>
+            <div class="form-row">
+                <div class="form-group col-sm-6">
+                    <label for="city">City</label>
+                    <input type="text" class="form-control" id="city" placeholder="Los Angeles" value="Berlin">
+                </div>
+                <div class="form-group col-sm-4">
+                    <label for="country">State</label>
+                    <select id="country" class="form-control">
+                        <option>Choose...</option>
+                        <option>Denmark</option>
+                        <option selected>Germany</option>
+                    </select>
+                </div>
+                <div class="form-group col-sm-2">
+                    <label for="zip">Zip</label>
+                    <input type="number" class="form-control" id="zip" placeholder="1234" value="10115">
+                </div>
             </div>
-            <div class="col-sm-3">
-                <form id="signup_form4" method="POST" name="mySignupForm">
-                    <h3>Payment</h3>
-                    <label>Card type</label><br>
-                    <input type="radio" name="ctype" value="Visa" checked> Visa<br>
-                    <input type="radio" name="ctype" value="MasterCard"> Master Card<br>
-                    <label>Card number</label><br>
-                    <input type="number" name="cnumber" value="1234123412341234" id="cnumber"><br>
-                    <label>Card holder</label><br>
-                    <input type="text" name="cholder" value="Max Mustermann" id="cholder"><br>
-                    <label>Expiry date</label><br>
-                    <input type="date" name="cexpiry" value="2020-01-01" id="cexpiry"><br>
-                    <label>Security Code</label><br>
-                    <input type="number" name="csecurity" value="123" id="csecurity">
-                </form>
+            <div class="form-row">
+                <div class="form-group col-sm-6">
+                    <label for="birthday">Birthday</label>
+                    <input type="date" class="form-control" id="birthday" placeholder="1977-06-11" value="1977-06-11">
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="gender">Gender</label>
+                    <select name="gender" id="gender" class="form-control">
+                        <option>Choose...</option>
+                        <option selected>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                    </select>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <form id="signup_form" method="POST" name="mySignupForm">
-                    <input type="button" value="Sign up" id="submit" onclick="signUp()" />
-                </form>
+            <legend>Contact and Login</legend>
+            <div class="form-row">
+                <div class="form-group col-sm-6">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="Phone number" value="0123456789">
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="email">E-Mail</label>
+                    <input type="email" class="form-control" id="email" placeholder="E-Mail" value="pkalkbrenner@gmail.com">
+                </div>
             </div>
-
-        </div>
+            <div class="form-row">
+                <div class="form-group col-sm-6">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Password" value="12345">
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="passwordcheck">Password (again)</label>
+                    <input type="password" class="form-control" id="passwordcheck" placeholder="Password" value="12345">
+                </div>
+            </div>
+            <legend>Payment Details</legend>
+            <div class="form-row">
+                <div class="form-group col-sm-6">
+                    <label for="ctype">Card Type</label>
+                    <select id="ctype" class="form-control">
+                        <option>Choose...</option>
+                        <option selected>Visa</option>
+                        <option>MasterCard</option>
+                    </select>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="cnumber">Card Number</label>
+                    <input type="number" class="form-control" id="cnumber" placeholder="1234..." value="1234123412341234">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-sm-6">
+                    <label for="cholder">Card Holder</label>
+                    <input type="text" class="form-control" id="cholder" placeholder="Credit Card Holder" value="Paul Kalkbrenner">
+                </div>
+                <div class="form-group col-sm-3">
+                    <label for="cexpiry">Expiry Date</label>
+                    <input type="date" class="form-control" id="cexpiry" placeholder="" value="2020-01-01">
+                </div>
+            </div>
+            <div class="form-group col-sm-3">
+                <label for="csecurity">CVC</label>
+                <input type="number" class="form-control" id="csecurity" placeholder="123" value="123">
+            </div>
+            <legend>Confirmation and sign up</legend>
+            <div class="form-row">
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            I accept the terms and conditions
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" onclick="signUp()">Sign up</button>
+        </form>
     </div>
+
     <footer class="container-fluid text-center">
         <a href="#myPage" title="To Top">
             <span class="glyphicon glyphicon-chevron-up"></span>
@@ -186,8 +236,6 @@
     </script>
 
     <script>
-        // Deactivate Password fields for Users registering for the SHORT subscription model
-        // Limit ZIP codes to the Copenhagen area
         sub = JSON.parse(localStorage.getItem("sub"));
         if (sub == "1") {
             document.getElementById("panel21").classList.replace("panel", "panel-grey");
@@ -243,9 +291,6 @@
     </script>
 
     <script>
-        function checkForm() {
-            // MISSING
-        }
     </script>
 </body>
 

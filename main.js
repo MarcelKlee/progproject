@@ -136,6 +136,7 @@ function validate(email, password) {
     return false;
 }
 
+/* signUp Function for the old registration
 function signUp() {
     // Retrieve all data to register the new User
     var firstname = document.getElementById("firstname").value;
@@ -196,6 +197,82 @@ function signUp() {
 
         users.push(newUser);
         alert("User has been registered");
+
+        localStorage.setItem("users", JSON.stringify(users));
+
+        window.location = "confirmation.html";
+    }
+}*/
+
+function signUp() {
+
+    // Retrieve all data from the form to register the new User
+    var firstname = document.getElementById("firstname").value;
+    var lastname = document.getElementById("lastname").value;
+    var birthday = document.getElementById("birthday").value;
+
+    var e = document.getElementById("gender");
+    var gender = e.options[e.selectedIndex].text;
+
+    var streetname = document.getElementById("streetname").value;
+    var streetnumber = document.getElementById("streetnumber").value;
+    var zip = document.getElementById("zip").value;
+    var city = document.getElementById("city").value;
+
+    var e = document.getElementById("country");
+    var country = e.options[e.selectedIndex].text;
+
+    var phone = document.getElementById("phone").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+
+    var e = document.getElementById("ctype");
+    var ctype = e.options[e.selectedIndex].text;
+
+    var cnumber = document.getElementById("cnumber").value;
+    var cholder = document.getElementById("cholder").value;
+    var cexpiry = document.getElementById("cexpiry").value;
+    var csecurity = document.getElementById("csecurity").value;
+    var sub = JSON.parse(localStorage.getItem("sub"));
+
+    if (userExists(email)) {
+
+        alert("User is already registered. Please log in instead.");
+        window.location = "index.html#login";
+    }
+    else {
+
+        users = JSON.parse(localStorage.getItem("users"));
+
+        newUser = {
+            "firstname": firstname,
+            "lastname": lastname,
+            "birthday": birthday,
+            "gender": gender,
+            "address": {
+                "streetname": streetname,
+                "streetnumber": streetnumber,
+                "zip": zip,
+                "city": city,
+                "country": country
+            },
+            "contact": {
+                "phone": phone,
+                "email": email,
+                "password": password
+            },
+            "payment": {
+                "ctype": ctype,
+                "cnumber": cnumber,
+                "cholder": cholder,
+                "cexpiry": cexpiry,
+                "csecurity": csecurity
+            },
+            "subscription": sub
+        }
+
+        users.push(newUser);
+        alert("User has been registered and can now log in.");
 
         localStorage.setItem("users", JSON.stringify(users));
 
