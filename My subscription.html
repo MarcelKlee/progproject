@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+        <div class="jumbotron text-center">
+                <h1>CYCLE</h1>
+                <p>Providing the best bike rental service in Copenhagen!</p>
+            </div>
+            <div id="profile" class="container-fluid">
+                <h2 id="welcome" class="text-center"></h2>
+    <h1>My New Subscription</h1>
+    <br>
+<!-- Container (Pricing Section) -->
+<div id="pricing" class="container-fluid">
+        <div class="text-center">
+            <h2>Pricing</h2>
+            <h4>Choose a subscription plan that works for you</h4>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 col-xs-12">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h1>Short</h1>
+                    </div>
+                    <div class="panel-body">
+                        <p><strong>Standard</strong> Bike</p>
+                        <p><strong>Full coverage</strong> Insurance (with deduction)</p>
+                        <p><strong>Free Repair / Swap</strong> (in Store)</p>
+                    </div>
+                    <div class="panel-footer">
+                        <h3>DKK 15</h3>
+                        <h4>per day</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h1>Standard</h1>
+                    </div>
+                    <div class="panel-body">
+                        <p><strong>Standard</strong> Bike</p>
+                        <p><strong>Full coverage</strong> Insurance (with deduction)</p>
+                        <p><strong>Free Repair / Swap</strong> (in Store)</p>
+                    </div>
+                    <div class="panel-footer">
+                        <h3>DKK 150</h3>
+                        <h4>per month</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h1>Premium</h1>
+                    </div>
+                    <div class="panel-body">
+                        <p><strong>Premium</strong> Bike</p>
+                        <p><strong>Full coverage</strong> Insurance (no deduction)</p>
+                        <p><strong>Free Repair / Swap</strong> everywhere within 12 hours</p>
+                        <p><strong>Free rental accessory</strong> (Helmet, Basket)</p>
+                    </div>
+                    <div class="panel-footer">
+                        <h3>DKK 175</h3>
+                        <h4>per month</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h1>Exclusive</h1>
+                    </div>
+                    <div class="panel-body">
+                        <p><strong>Premium</strong> Bike</p>
+                        <p><strong>Full coverage</strong> Insurance (no deduction)</p>
+                        <p><strong>Free Repair / Swap</strong> everywhere within 4 hours</p>
+                        <p><strong>Free rental accessory</strong> (Helmet, Basket, Tool set, Child seat and more)</p>
+                    </div>
+                    <div class="panel-footer">
+                        <h3>DKK 200</h3>
+                        <h4>per month</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <p>Choose your new plan<p>
+            <p id="mysubscription"></p>
+            <form id="subscription">
+            <select name="subscriptionField" id="subscriptionField" required>
+                    <option value=1>Short</option>
+                    <option value=2>Standard</option>
+                    <option value=3>Premium</option>
+                    <option value=4>Exclusive</option>
+            </select>
+            <button id='subButtonsubscription' type='button'>Click here to confirm your new subscription</button>
+        </form>
+            <p id='resultsubscription'></p>
+            <form action="Subscription Confirmation.html"></form>
+            <script>
+                  // Load user database and active user from Local Storage
+                    users = JSON.parse(localStorage.getItem("users"));
+                     var activeUser = localStorage.getItem("activeUser");
+
+                 // Set active users index in the array initially to 0
+                     var userArrayIndex = 0;
+
+                 // Loop through array to find the Object from the active user and store the index of that object in "activeUser"
+                     for (let index = 0; index < users.length; index++) {
+                     if (users[index].email == activeUser) {
+                     userArrayIndex = index;
+        }
+    }
+                function getUserSubscription() {
+                    var subscriptionField = document.getElementById("subscriptionField").value;
+                    var resultsubscription = document.getElementById('resultsubscription');   
+        
+                    resultsubscription.textContent = 'Your new subscription is: ' + realsubscription;
+                    alert ("You will now be redirected to the confirmation page. Please press F5 to continue")
+                    window.location = "Subscription Confirmation.html"
+}
+                    // use an eventlistener for the event
+                    var subButtonsubscription = document.getElementById('subButtonsubscription');
+                    subButtonsubscription.addEventListener('click', getUserSubscription, false);
+
+                    //save value into local storage so that it doesn't go away when we refresh the page. 
+                    localStorage.setItem("subscriptionField", subscriptionField.value);
+                    var mynewsubscription = localStorage.getItem("subscriptionField");
+                    localStorage.setItem("mynewsubscription", mynewsubscription);
+
+                    users[userArrayIndex].subscription = document.getElementById("subscriptionField").value;
+                    localStorage.setItem("users", JSON.stringify(users));
+                    
+                    var realsubscription = ""
+                    if (mynewsubscription == 1) {
+                        realsubscription = "Short"
+                    } 
+                    else if (mynewsubscription == 2) {
+                        realsubscription = "Standard"
+                    }
+                    else if (mynewsubscription == 3) {
+                        realsubscription = "Premium"
+                    } 
+                    else if(mynewsubscription == 4) {
+                        realsubscription = "Exclusive"
+                    }
+                    localStorage.setItem("realsubscription", realsubscription);
+
+
+            </script>
+            <script> src="./profile.html" </script>
+
+</body>
+</html>
