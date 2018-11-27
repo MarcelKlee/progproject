@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="Payment.css">
+    <!--script src="Payment.js"></script>-->
+    <title>Payment page</title>
+</head>
+<h1>Payment details</h1>
+
+<body>
+    <form id="formTest" method="get" action="processData">
+    <div>
+   <td>Card type <span class="required">*</span></td>    
+    <select id="selCard" name="cardtype" autofocus required>
+        <option value="">---Please select---</option>
+        <option value="Visa">Visa</option>
+        <option value="Mastercard">Mastercard</option>
+        <option value="AmericanExpress">American Express</option>
+    </select/>
+  <!--  <td id="elmcardtypeError" class="errorMsg">&nbsp;</td> -->
+</div>
+    <br>
+    <label for="cardHolderName">Cardholder's name<span required>*</span></label></td>
+    <input type="text" name="cardholdername" id="cardHolderName" placeholder="Cardholder's name" required/>
+   <!-- <td id="elmcardHolderNameError" class="errorMsg">&nbsp;</td>-->
+    <br>
+    <label for="cardnumber">Card number<span class="required">*</span></label></td>    
+    <input type="text" name="cardnumber" id="cardNumber" maxlength="16" placeholder="Min.16 digits" required />
+  <!--  <td id="elmcardNumberError" class="errorMsg">&nbsp;</td> -->
+    <br>
+    <label for="expirymonth">Expiry month <span class="required">*</span></label></td>    
+    <input type="text" name="expiration month" id="expm" min="01" max="12" placeholder="MM" required>
+    <br>
+    <label for="expiryyear">Expiry year <span class="required">*</span></label></td>    
+    <input type="text" name="expiration year" id="expy" min="2018" placeholder="YYYY" required>
+    <br>
+    <label for="cvc">CVC <span class="required">*</span></label>   
+    <input type="text" name="CVC" id="CVC" size="3" placeholder="xxx"required />
+    <br><br>
+    <p1>
+        <input type="checkbox" required id="terms"> I accept terms and conditions</p1>
+        <br> <br>
+        <input type="submit" value="Click to contiue" name="submit" id="submit"  />
+
+    </form>
+</body>
+</html>
