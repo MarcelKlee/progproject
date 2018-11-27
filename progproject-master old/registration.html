@@ -72,95 +72,80 @@
     </div>
     <div class="container-fluid">
         <h2 class="text-center">Registration (new version)</h2>
-        <form id="registerForm">
+        <form>
             <legend>Personal Details</legend>
             <div class="form-row">
                 <div class="form-group col-sm-6">
                     <label for="firstname">First Name</label>
-                    <input type="text" class="form-control" id="firstname" placeholder="Janet">
-                    <span class="help-block">
-                            <p>This field is mandatory*</p>
-                   
-
+                    <input type="text" class="form-control" id="firstname" placeholder="Janet" value="Paul">
                 </div>
                 <div class="form-group col-sm-6">
                     <label for="lastname">Last Name</label>
-                    <input type="text" class="form-control" id="lastname" placeholder="Jackson">
-                    <span class="help-block">
-                        <p>This field is mandatory*</p>
-                    </span>
-
+                    <input type="text" class="form-control" id="lastname" placeholder="Jackson" value="Kalkbrenner">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-sm-9">
                     <label for="streetname">Street Name</label>
-                    <input type="text" class="form-control" id="streetname" placeholder="Street name">
-
+                    <input type="text" class="form-control" id="streetname" placeholder="Street name" value="Minimal St">
                 </div>
                 <div class="form-group col-sm-3">
-                    <label for="streetnumber">House Number</label>
-                    <input type="text" class="form-control" id="streetnumber" placeholder="House number">
+                    <label for="streetnumber">Street Number</label>
+                    <input type="text" class="form-control" id="streetnumber" placeholder="Street number" value="1">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-sm-6">
                     <label for="city">City</label>
-                    <select id="city" class="form-control">
-                        <option value="" selected>Choose...</option>
-                        <option value="0">Other</option>
-                        <option value="1">Copenhagen</option>
-                    </select>
+                    <input type="text" class="form-control" id="city" placeholder="Los Angeles" value="Berlin">
                 </div>
                 <div class="form-group col-sm-4">
                     <label for="country">State</label>
                     <select id="country" class="form-control">
-                        <option selected>Choose...</option>
+                        <option>Choose...</option>
                         <option>Denmark</option>
+                        <option selected>Germany</option>
                     </select>
                 </div>
                 <div class="form-group col-sm-2">
                     <label for="zip">Zip</label>
-                    <input type="text" class="form-control" id="zip" maxlength="4" placeholder="1234">
+                    <input type="number" class="form-control" id="zip" placeholder="1234" value="10115">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-sm-6">
                     <label for="birthday">Birthday</label>
-                    <input type="date" class="form-control" id="birthday" placeholder="1966-05-16">
+                    <input type="date" class="form-control" id="birthday" placeholder="1977-06-11" value="1977-06-11">
                 </div>
                 <div class="form-group col-sm-6">
                     <label for="gender">Gender</label>
-                    <select id="gender" class="form-control">
-                        <option selected value="0">Choose...</option>
-                        <option value="1">Male</option>
-                        <option value="2">Female</option>
-                        <option value="3">Other</option>
+                    <select name="gender" id="gender" class="form-control">
+                        <option>Choose...</option>
+                        <option selected>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
                     </select>
                 </div>
             </div>
             <legend>Contact and Login</legend>
             <div class="form-row">
                 <div class="form-group col-sm-6">
-                    <label for="phonenumber">Phone Number</label>
-                    <input type="tel" class="form-control" id="phonenumber" maxlength="8" placeholder="Phone number">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="Phone number" value="0123456789">
                 </div>
                 <div class="form-group col-sm-6">
                     <label for="email">E-Mail</label>
-                    <input type="email" class="form-control" id="email" placeholder="E-Mail">
+                    <input type="email" class="form-control" id="email" placeholder="E-Mail" value="pkalkbrenner@gmail.com">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-sm-6">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Password">
-                    <span class="help-block">Must include at least one letter, at least one number, and min. 6
-                        characters
+                    <input type="password" class="form-control" id="password" placeholder="Password" value="12345">
                 </div>
                 <div class="form-group col-sm-6">
                     <label for="passwordcheck">Password (again)</label>
-                    <input type="password" class="form-control" id="passwordcheck" placeholder="Password">
-                    <span class="help-block">Repeat password</span>
+                    <input type="password" class="form-control" id="passwordcheck" placeholder="Password" value="12345">
                 </div>
             </div>
             <legend>Payment Details</legend>
@@ -168,48 +153,42 @@
                 <div class="form-group col-sm-6">
                     <label for="ctype">Card Type</label>
                     <select id="ctype" class="form-control">
-                        <option value="0" selected>Choose...</option>
-                        <option value="1">Visa</option>
-                        <option value="2">MasterCard</option>
+                        <option>Choose...</option>
+                        <option selected>Visa</option>
+                        <option>MasterCard</option>
                     </select>
                 </div>
                 <div class="form-group col-sm-6">
                     <label for="cnumber">Card Number</label>
-                    <input type="text" class="form-control" id="cnumber" maxlength="16" placeholder="1234...">
+                    <input type="number" class="form-control" id="cnumber" placeholder="1234..." value="1234123412341234">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-sm-6">
                     <label for="cholder">Card Holder</label>
-                    <input type="text" class="form-control" id="cholder" placeholder="Credit Card Holder">
+                    <input type="text" class="form-control" id="cholder" placeholder="Credit Card Holder" value="Paul Kalkbrenner">
                 </div>
                 <div class="form-group col-sm-3">
-                    <label for="expirymonth">Expiry Month</label>
-                    <input type="text" class="form-control" id="expm" maxlength="2" placeholder="MM">
+                    <label for="cexpiry">Expiry Date</label>
+                    <input type="date" class="form-control" id="cexpiry" placeholder="" value="2020-01-01">
                 </div>
-            </div>
-            <div class="form-group col-sm-3">
-                <label for="expiryyear">Expiry Date</label>
-                <input type="text" class="form-control" id="expy" maxlength="4" placeholder="YYYY">
             </div>
             <div class="form-group col-sm-3">
                 <label for="csecurity">CVC</label>
-                <input type="text" class="form-control" maxlength="3" id="csecurity" placeholder="123">
+                <input type="number" class="form-control" id="csecurity" placeholder="123" value="123">
             </div>
-            <div>
-                <legend>Confirmation and sign up</legend>
-                <div class="form-row">
-                    <div class="form-group">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="checkbox">
-                            <label class="form-check-label" for="checkbox">
-                                I accept the terms and conditions
-                            </label>
-                        </div>
+            <legend>Confirmation and sign up</legend>
+            <div class="form-row">
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            I accept the terms and conditions
+                        </label>
                     </div>
                 </div>
-
-                <button type="submit" class="btn btn-primary" unchecked="true" onclick="return(validateRegistration(this))">Sign up</button>
+            </div>
+            <button type="submit" class="btn btn-primary" onclick="signUp()">Sign up</button>
         </form>
     </div>
 
@@ -227,21 +206,26 @@
                 if (this.hash !== "") {
                     // Prevent default anchor click behavior
                     event.preventDefault();
+
                     // Store hash
                     var hash = this.hash;
+
                     // Using jQuery's animate() method to add smooth page scroll
                     // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
                     $('html, body').animate({
                         scrollTop: $(hash).offset().top
                     }, 900, function () {
+
                         // Add hash (#) to URL when done scrolling (default click behavior)
                         window.location.hash = hash;
                     });
                 } // End if
             });
+
             $(window).scroll(function () {
                 $(".slideanim").each(function () {
                     var pos = $(this).offset().top;
+
                     var winTop = $(window).scrollTop();
                     if (pos < winTop + 600) {
                         $(this).addClass("slide");
@@ -252,8 +236,6 @@
     </script>
 
     <script>
-        // Deactivate Password fields for Users registering for the SHORT subscription model
-        // Limit ZIP codes to the Copenhagen area
         sub = JSON.parse(localStorage.getItem("sub"));
         if (sub == "1") {
             document.getElementById("panel21").classList.replace("panel", "panel-grey");
@@ -262,6 +244,7 @@
             document.getElementById("panel32").classList.replace("panel-heading", "panel-heading-grey");
             document.getElementById("panel41").classList.replace("panel", "panel-grey");
             document.getElementById("panel42").classList.replace("panel-heading", "panel-heading-grey");
+
             // Users of the Short subscription model
             document.getElementById("password").disabled = true;
             document.getElementById("passwordcheck").disabled = true;
@@ -273,6 +256,7 @@
             document.getElementById("panel32").classList.replace("panel-heading", "panel-heading-grey");
             document.getElementById("panel41").classList.replace("panel", "panel-grey");
             document.getElementById("panel42").classList.replace("panel-heading", "panel-heading-grey");
+
             document.getElementById("zip").setAttribute("min", "1000");
             document.getElementById("zip").setAttribute("max", "2999");
         }
@@ -283,6 +267,7 @@
             document.getElementById("panel22").classList.replace("panel-heading", "panel-heading-grey");
             document.getElementById("panel41").classList.replace("panel", "panel-grey");
             document.getElementById("panel42").classList.replace("panel-heading", "panel-heading-grey");
+
             document.getElementById("zip").setAttribute("min", "1000");
             document.getElementById("zip").setAttribute("max", "2999");
         }
@@ -293,28 +278,19 @@
             document.getElementById("panel22").classList.replace("panel-heading", "panel-heading-grey");
             document.getElementById("panel31").classList.replace("panel", "panel-grey");
             document.getElementById("panel32").classList.replace("panel-heading", "panel-heading-grey");
+
             document.getElementById("zip").setAttribute("min", "1000");
             document.getElementById("zip").setAttribute("max", "2999");
         }
         else {
-            // alert("Please choose subscription plan on the first page.")
+            alert("Please choose subscription plan on the first page.")
+
             // Deactivate "Sign up"-Button
-            //document.getElementById("submit").disabled = true;
+            document.getElementById("submit").disabled = true;
         }
     </script>
 
     <script>
-
-
-
-
-
-
-
-
-
-
-
     </script>
 </body>
 

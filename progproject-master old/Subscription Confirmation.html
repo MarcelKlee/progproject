@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+        <div class="jumbotron text-center">
+            <h1>CYCLE</h1>
+            <p>Providing the best bike rental service in Copenhagen!</p>
+        </div>
+        <div id="profile" class="container-fluid">
+            <h2 id="welcome" class="text-center"></h2>
+            <h1>Subscription Confirmation</h1>
+    
+            <div class="row">
+                <div class="column">
+                        <p>This is your data</p>
+                        <p id="confirmfirstname"></p>
+                        <p id="confirmlastname"></p>
+                        <p id="confirmemail"></p>
+                        <p id="confirmpassword"></p>
+                        <p id="confirmphone"></p>
+                        <p>Please check that the your data is correct. If not, return to your Profile page and make the necessary changes</p>
+                        <p id="confirmsubscription"></p>
+                            <form action="profile.html">
+                                <input type="submit" value="Confirm your new subscription!" />
+                            </form>
+                        <script src="./Main.js"></script>
+                        <script> src="./profile.html" </script>
+                        <script>
+                            document.getElementById("confirmfirstname").innerHTML = "Your First Name: " + localStorage.confirmationfirstname;
+                            document.getElementById("confirmlastname").innerHTML = "Your Last Name: " + localStorage.confirmationlastname;
+                            document.getElementById("confirmemail").innerHTML = "Your Email: " + localStorage.confirmationemail;
+                            document.getElementById("confirmphone").innerHTML = "Your Phone: " + localStorage.confirmationphone;
+                            document.getElementById("confirmpassword").innerHTML = "Your password: " + localStorage.confirmationpassword;
+                            document.getElementById("confirmsubscription").innerHTML = "Your new subscription will be: " + localStorage.realsubscription;
+
+                        </script>
+            </div>
+            <div class="column">
+                    <p>This is your address data</p>
+                    <p id="confirmstreetname"></p>
+                    <p id="confirmstreetnumber"></p>
+                    <p id="confirmzip"></p>
+                    <p id="confirmcity"></p>
+                    <p id="confirmcountry"></p>
+            <script>
+                            document.getElementById("confirmstreetname").innerHTML = "Your street name: " + localStorage.confirmationstreetname;
+                            document.getElementById("confirmstreetnumber").innerHTML = "Your street number: " + localStorage.confirmationstreetnumber;
+                            document.getElementById("confirmzip").innerHTML = "Your Zip code: " + localStorage.confirmationzip;
+                            document.getElementById("confirmcity").innerHTML = "Your city: " + localStorage.confirmationcity;
+                            document.getElementById("confirmcountry").innerHTML = "Your country: " + localStorage.confirmationcountry;
+            </script>
+                
+            </div>
+        </div>
+    </body>
+</html>

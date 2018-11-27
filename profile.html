@@ -25,96 +25,96 @@
 
         <div class="row">
             <div class="column">
-            <form id="edit_form" method="GET" name="myEditForm">
-                <h2>Edit data</h2>
-                <label>New First Name:</label>
-                <input type="text" name="firstname" value="" id="firstname">
-                <button id='subButtonname' type='button'>Check your new firstname!</button>
-                <p id='resultname'></p>
+                <form id="edit_form" method="GET" name="myEditForm">
+                    <h2>Edit data</h2>
+                    <label>New First Name:</label>
+                    <input type="text" name="firstname" value="" id="firstname">
+                    <button id='subButtonname' type='button'>Check your new firstname!</button>
+                    <p id='resultname'></p>
+                    <br>
+                    <p id=oldfirstname></p>
+                    <br>
+                    <label>New Last Name:</label>
+                    <input type="text" name="lastname" value="" id="lastname">
+                    <button id='subButtonsurname' type='button'>Check your new lastname!</button>
+                    <p id='resultsurname'></p>
+                    <br>
+                    <p id=oldlastname></p>
+                    <br>
+                    <label>New E-Mail:</label>
+                    <input type="email" name="email" value="" id="email">
+                    <button id='subButtonemail' type='button'>Confirm your new email!</button>
+                    <p id='resultemail'></p>
+                    <br>
+                    <p id=oldemail></p>
+                    <br>
+                    <label>New Phone Number:</label>
+                    <input type="text" name="phone" value="" id="phone">
+                    <button id='subButtonphone' type='button'>Confirm your new phone number!</button>
+                    <p id='resultphone'></p>
+                    <br>
+                    <p id=oldphone></p>
+                    <br>
+                    <label>New Password:</label>
+                    <input type="text" name="password" value="" id="password">
+                    <button id='subButtonpassword' type='button'>Confirm your new password!</button>
+                    <p id='resultpassword'></p>
+                    <br>
+                    <p id=oldpassword></p>
+                    <br>
+                    <label>New Subscription:</label>
+                    <br>
+                    <a href="my subscription.html">Click here to choose your new subscription</a>
+                    <br>
+                    <p id=oldsubscription></p>
+                    <br>
+                    <input type="button" value="Save" id="submit" onclick="save()" />
+                    <input type="button" value="Log out" id="submit" onclick="logout()" />
+                    <p id=niceday></p>
+                </form>
+            </div>
+            <div class="column">
+                <h2>Edit Address Data</h2>
+                <label>New Street Name:</label>
+                <input type="text" name="streetname" value="" id="streetname">
+                <button id='subButtonstreetname' type='button'>Check your Street Name!</button>
+                <p id='resultstreetname'></p>
                 <br>
-                <p id=oldfirstname></p>
+                <p id=oldstreetname></p>
                 <br>
-                <label>New Last Name:</label>
-                <input type="text" name="lastname" value="" id="lastname">
-                <button id='subButtonsurname' type='button'>Check your new lastname!</button>
-                <p id='resultsurname'></p>
+                <label>New Street Number:</label>
+                <input type="text" name="streetnumber" value="" id="streetnumber">
+                <button id='subButtonstreetnumber' type='button'>Check your Street Number!</button>
+                <p id='resultstreetnumber'></p>
                 <br>
-                <p id=oldlastname></p>
+                <p id=oldstreetnumber></p>
                 <br>
-                <label>New E-Mail:</label>
-                <input type="email" name="email" value="" id="email">
-                <button id='subButtonemail' type='button'>Confirm your new email!</button>
-                <p id='resultemail'></p>
+                <label>New Zip Code:</label>
+                <input type="text" name="zip" value="" id="zip">
+                <button id='subButtonzip' type='button'>Confirm your Zip code!</button>
+                <p id='resultzip'></p>
                 <br>
-                <p id=oldemail></p>
+                <p id=oldzip></p>
                 <br>
-                <label>New Phone Number:</label>
-                <input type="text" name="phone" value="" id="phone">
-                <button id='subButtonphone' type='button'>Confirm your new phone number!</button>
-                <p id='resultphone'></p>
+                <label>New City:</label>
+                <input type="text" name="city" value="" id="city">
+                <button id='subButtoncity' type='button'>Confirm your City!</button>
+                <p id='resultcity'></p>
                 <br>
-                <p id=oldphone></p>
+                <p id=oldcity></p>
                 <br>
-                <label>New Password:</label>
-                <input type="text" name="password" value="" id="password">
-                <button id='subButtonpassword' type='button'>Confirm your new password!</button>
-                <p id='resultpassword'></p>
-                <br>
-                <p id=oldpassword></p>
-                <br>
-                <label>New Subscription:</label>
-                <br>
-                <a href="my subscription.html">Click here to choose your new subscription</a>
-                <br>
-                <p id=oldsubscription></p>
-                <br>
-                <input type="button" value="Save" id="submit" onclick="save()" />
-                <input type="button" value="Log out" id="submit" onclick="logout()" />
-                <p id=niceday></p>
-            </form>
-        </div>
-        <div class="column">
-            <h2>Edit Address Data</h2>
-            <label>New Street Name:</label>
-            <input type="text" name="streetname" value="" id="streetname">
-            <button id='subButtonstreetname' type='button'>Check your Street Name!</button>
-            <p id='resultstreetname'></p>
-            <br>
-            <p id=oldstreetname></p>
-            <br>
-            <label>New Street Number:</label>
-            <input type="text" name="streetnumber" value="" id="streetnumber">
-            <button id='subButtonstreetnumber' type='button'>Check your Street Number!</button>
-            <p id='resultstreetnumber'></p>
-            <br>
-            <p id=oldstreetnumber></p>
-            <br>
-            <label>New Zip Code:</label>
-            <input type="text" name="zip" value="" id="zip">
-            <button id='subButtonzip' type='button'>Confirm your Zip code!</button>
-            <p id='resultzip'></p>
-            <br>
-            <p id=oldzip></p>
-            <br>
-            <label>New City:</label>
-            <input type="text" name="city" value="" id="city">
-            <button id='subButtoncity' type='button'>Confirm your City!</button>
-            <p id='resultcity'></p>
-            <br>
-            <p id=oldcity></p>
-            <br>
-            <label>New Country:</label>
-            <select name="countryField" id="countryField" required>
+                <label>New Country:</label>
+                <select name="countryField" id="countryField" required>
                     <option value=Denmark>Denmark</option>
                     <option value=Sweden>Sweden</option>
-            </select>
-            <button id='subButtoncountry' type='button'>Confirm your country!</button>
-            <p id='resultcountry'></p>
-            <br>
-            <p id=oldcountry></p>
-            <br>
+                </select>
+                <button id='subButtoncountry' type='button'>Confirm your country!</button>
+                <p id='resultcountry'></p>
+                <br>
+                <p id=oldcountry></p>
+                <br>
+            </div>
         </div>
-    </div>
 </body>
 
 <script>
@@ -181,168 +181,168 @@
     document.getElementById("oldcity").innerHTML = "Current Country: " + users[userArrayIndex].address.country;
 
 
- function getUserName() {
-    var firstnamecheck = document.getElementById("firstname").value;
-    var resultname = document.getElementById('resultname');
-    var nameexpression = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/
-    //https://www.regextester.com/93648
-// if the input complies with the expression, then return true, otherwise return false.    
-    if (nameexpression.test(firstnamecheck)===true) {
-        resultname.textContent = 'Your new firstname will be: ' + firstnamecheck;
-    } else {
-        resultname.textContent = "Please enter a valid name";
+    function getUserName() {
+        var firstnamecheck = document.getElementById("firstname").value;
+        var resultname = document.getElementById('resultname');
+        var nameexpression = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/
+        //https://www.regextester.com/93648
+        // if the input complies with the expression, then return true, otherwise return false.    
+        if (nameexpression.test(firstnamecheck) === true) {
+            resultname.textContent = 'Your new firstname will be: ' + firstnamecheck;
+        } else {
+            resultname.textContent = "Please enter a valid name";
+        }
     }
-}
-// use an eventlistener for the event
-var subButtonname = document.getElementById('subButtonname');
-subButtonname.addEventListener('click', getUserName, false);
+    // use an eventlistener for the event
+    var subButtonname = document.getElementById('subButtonname');
+    subButtonname.addEventListener('click', getUserName, false);
 
-//get Surname from what the user has written
-function getUserSurname() {
-    var lastnamecheck = document.getElementById("lastname").value;
-    var resultsurname = document.getElementById('resultsurname');
-    var surnameexpression = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/
-    //https://www.regextester.com/93648
-// if the input complies with the expression, then return true, otherwise return false.    
-    if (surnameexpression.test(lastnamecheck)===true) {
-        resultsurname.textContent = 'Your new lastname will be: ' + lastnamecheck;
-    } else {
-        resultsurname.textContent = "Please enter a valid lastname";
+    //get Surname from what the user has written
+    function getUserSurname() {
+        var lastnamecheck = document.getElementById("lastname").value;
+        var resultsurname = document.getElementById('resultsurname');
+        var surnameexpression = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/
+        //https://www.regextester.com/93648
+        // if the input complies with the expression, then return true, otherwise return false.    
+        if (surnameexpression.test(lastnamecheck) === true) {
+            resultsurname.textContent = 'Your new lastname will be: ' + lastnamecheck;
+        } else {
+            resultsurname.textContent = "Please enter a valid lastname";
+        }
     }
-}
-// use an eventlistener for the event
-var subButtonsurname = document.getElementById('subButtonsurname');
-subButtonsurname.addEventListener('click', getUserSurname, false);
+    // use an eventlistener for the event
+    var subButtonsurname = document.getElementById('subButtonsurname');
+    subButtonsurname.addEventListener('click', getUserSurname, false);
 
-//get email from what the user has written
-function getUserEmail() {
-    var emailcheck = document.getElementById("email").value;
-    var resultemail = document.getElementById('resultemail');
-   //to check that the address entered contains something, then an @ symbol, and then something else.
-    var emailexpression = /\S+@\S+/
-// if the input complies with the expression, then return true, otherwise return false.    
-    if(emailexpression.test(emailcheck)===true) {
+    //get email from what the user has written
+    function getUserEmail() {
+        var emailcheck = document.getElementById("email").value;
+        var resultemail = document.getElementById('resultemail');
+        //to check that the address entered contains something, then an @ symbol, and then something else.
+        var emailexpression = /\S+@\S+/
+        // if the input complies with the expression, then return true, otherwise return false.    
+        if (emailexpression.test(emailcheck) === true) {
 
-        resultemail.textContent = 'Your new email is: ' + emailcheck;
+            resultemail.textContent = 'Your new email is: ' + emailcheck;
 
-    } else {
-        resultemail.textContent = "Please enter a valid email";
+        } else {
+            resultemail.textContent = "Please enter a valid email";
+        }
+
     }
+    // use an eventlistener for the event
+    var subButtonemail = document.getElementById('subButtonemail');
+    subButtonemail.addEventListener('click', getUserEmail, false);
 
-}
-// use an eventlistener for the event
-var subButtonemail = document.getElementById('subButtonemail');
-subButtonemail.addEventListener('click', getUserEmail, false);
-
-// get phone number from what the user has written
-function getUserPhone() {
-    var phonecheck = document.getElementById("phone").value;
-    var resultphone = document.getElementById('resultphone');
-    // the input should contain only 8 characters (only digits)
-    var phoneexpression = /^([0-9]{8})$/;
-// if the input complies with the expression, then return true, otherwise return false.    
-    if (phoneexpression.test(phonecheck)===true) {
-        resultphone.textContent = 'Your new phone number is: ' + phonecheck;
-    } else {
-        resultphone.textContent = "Please enter a valid phone number that is 8 digits long";
+    // get phone number from what the user has written
+    function getUserPhone() {
+        var phonecheck = document.getElementById("phone").value;
+        var resultphone = document.getElementById('resultphone');
+        // the input should contain only 8 characters (only digits)
+        var phoneexpression = /^([0-9]{8})$/;
+        // if the input complies with the expression, then return true, otherwise return false.    
+        if (phoneexpression.test(phonecheck) === true) {
+            resultphone.textContent = 'Your new phone number is: ' + phonecheck;
+        } else {
+            resultphone.textContent = "Please enter a valid phone number that is 8 digits long";
+        }
     }
-}
-// use an eventlistener to show the result without having to refresh the page.
-var subButtonphone = document.getElementById('subButtonphone');
-subButtonphone.addEventListener('click', getUserPhone, false);
+    // use an eventlistener to show the result without having to refresh the page.
+    var subButtonphone = document.getElementById('subButtonphone');
+    subButtonphone.addEventListener('click', getUserPhone, false);
 
-//get password from what the user has written
-function getUserPassword() {
-    var passwordcheck = document.getElementById("password").value;
-    var resultpassword = document.getElementById('resultpassword');
-    var passwordexpression = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/
-// the password should contain at least one digit, one lower case, one higher case, and at least 8 from the mentioned characters.
-    if (passwordexpression.test(passwordcheck)===true) {
-        resultpassword.textContent = 'Your new password is: ' + passwordcheck;
-    } else {
-        resultpassword.textContent = "Please enter a valid password: at least 8 characters, including one digit, one lower case and one higher case";
+    //get password from what the user has written
+    function getUserPassword() {
+        var passwordcheck = document.getElementById("password").value;
+        var resultpassword = document.getElementById('resultpassword');
+        var passwordexpression = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/
+        // the password should contain at least one digit, one lower case, one higher case, and at least 8 from the mentioned characters.
+        if (passwordexpression.test(passwordcheck) === true) {
+            resultpassword.textContent = 'Your new password is: ' + passwordcheck;
+        } else {
+            resultpassword.textContent = "Please enter a valid password: at least 8 characters, including one digit, one lower case and one higher case";
+        }
     }
-}
-// use an eventlistener for the event
-var subButtonpassword = document.getElementById('subButtonpassword');
-subButtonpassword.addEventListener('click', getUserPassword, false);
+    // use an eventlistener for the event
+    var subButtonpassword = document.getElementById('subButtonpassword');
+    subButtonpassword.addEventListener('click', getUserPassword, false);
 
-function getUserStreetName() {
-    var streetNameCheck = document.getElementById("streetname").value;
-    var resultstreetname = document.getElementById('resultstreetname');
-    var streetnameexpression = /^[a-zA-Z æøåÆØÅ]*$/
-    //https://www.regextester.com/93648
-// if the input complies with the expression, then return true, otherwise return false.    
-    if (streetnameexpression.test(streetNameCheck)===true) {
-        resultstreetname.textContent = 'Your new Street Name will be: ' + streetNameCheck;
-    } else {
-        resultstreetname.textContent = "Please enter a valid street name";
+    function getUserStreetName() {
+        var streetNameCheck = document.getElementById("streetname").value;
+        var resultstreetname = document.getElementById('resultstreetname');
+        var streetnameexpression = /^[a-zA-Z æøåÆØÅ]*$/
+        //https://www.regextester.com/93648
+        // if the input complies with the expression, then return true, otherwise return false.    
+        if (streetnameexpression.test(streetNameCheck) === true) {
+            resultstreetname.textContent = 'Your new Street Name will be: ' + streetNameCheck;
+        } else {
+            resultstreetname.textContent = "Please enter a valid street name";
+        }
     }
-}
-// use an eventlistener for the event
-var subButtonstreetname = document.getElementById('subButtonstreetname');
-subButtonstreetname.addEventListener('click', getUserStreetName, false);
+    // use an eventlistener for the event
+    var subButtonstreetname = document.getElementById('subButtonstreetname');
+    subButtonstreetname.addEventListener('click', getUserStreetName, false);
 
-function getUserStreetNumber() {
-    var streetNumberCheck = document.getElementById("streetnumber").value;
-    var resultstreetnumber = document.getElementById('resultstreetnumber');
-    var streetnumberexpression = /^[0-9]*$/
-    //https://www.regextester.com/93648
-// if the input complies with the expression, then return true, otherwise return false.    
-    if (streetnumberexpression.test(streetNumberCheck)===true) {
-        resultstreetnumber.textContent = 'Your new Street Number will be: ' + streetNumberCheck;
-    } else {
-        resultstreetnumber.textContent = "Please enter a valid street number";
+    function getUserStreetNumber() {
+        var streetNumberCheck = document.getElementById("streetnumber").value;
+        var resultstreetnumber = document.getElementById('resultstreetnumber');
+        var streetnumberexpression = /^[0-9]*$/
+        //https://www.regextester.com/93648
+        // if the input complies with the expression, then return true, otherwise return false.    
+        if (streetnumberexpression.test(streetNumberCheck) === true) {
+            resultstreetnumber.textContent = 'Your new Street Number will be: ' + streetNumberCheck;
+        } else {
+            resultstreetnumber.textContent = "Please enter a valid street number";
+        }
     }
-}
-// use an eventlistener for the event
-var subButtonstreetnumber = document.getElementById('subButtonstreetnumber');
-subButtonstreetnumber.addEventListener('click', getUserStreetNumber, false);
+    // use an eventlistener for the event
+    var subButtonstreetnumber = document.getElementById('subButtonstreetnumber');
+    subButtonstreetnumber.addEventListener('click', getUserStreetNumber, false);
 
-function getUserZip() {
-    var zipCheck = document.getElementById("zip").value;
-    var resultzip = document.getElementById('resultzip');
-    var zipexpression = /^([0-9]{4})$/;
-    //https://www.regextester.com/93648
-// if the input complies with the expression, then return true, otherwise return false.    
-    if (zipexpression.test(zipCheck)===true) {
-        resultzip.textContent = 'Your new Zip code will be: ' + zipCheck;
-    } else {
-        resultzip.textContent = "Please enter a valid Zip code";
+    function getUserZip() {
+        var zipCheck = document.getElementById("zip").value;
+        var resultzip = document.getElementById('resultzip');
+        var zipexpression = /^([0-9]{4})$/;
+        //https://www.regextester.com/93648
+        // if the input complies with the expression, then return true, otherwise return false.    
+        if (zipexpression.test(zipCheck) === true) {
+            resultzip.textContent = 'Your new Zip code will be: ' + zipCheck;
+        } else {
+            resultzip.textContent = "Please enter a valid Zip code";
+        }
     }
-}
-// use an eventlistener for the event
-var subButtonzip = document.getElementById('subButtonzip');
-subButtonzip.addEventListener('click', getUserZip, false);
+    // use an eventlistener for the event
+    var subButtonzip = document.getElementById('subButtonzip');
+    subButtonzip.addEventListener('click', getUserZip, false);
 
-function getUserCity() {
-    var cityCheck = document.getElementById("city").value;
-    var resultcity = document.getElementById('resultcity');
-    var cityexpression = /^[a-zA-Z æøåÆØÅ]*$/
-    //https://www.regextester.com/93648
-// if the input complies with the expression, then return true, otherwise return false.    
-    if (cityexpression.test(cityCheck)===true) {
-        resultcity.textContent = 'Your new City will be: ' + cityCheck;
-    } else {
-        resultcity.textContent = "Please enter a valid City";
+    function getUserCity() {
+        var cityCheck = document.getElementById("city").value;
+        var resultcity = document.getElementById('resultcity');
+        var cityexpression = /^[a-zA-Z æøåÆØÅ]*$/
+        //https://www.regextester.com/93648
+        // if the input complies with the expression, then return true, otherwise return false.    
+        if (cityexpression.test(cityCheck) === true) {
+            resultcity.textContent = 'Your new City will be: ' + cityCheck;
+        } else {
+            resultcity.textContent = "Please enter a valid City";
+        }
     }
-}
-// use an eventlistener for the event
-var subButtoncity = document.getElementById('subButtoncity');
-subButtoncity.addEventListener('click', getUserCity, false);
+    // use an eventlistener for the event
+    var subButtoncity = document.getElementById('subButtoncity');
+    subButtoncity.addEventListener('click', getUserCity, false);
 
-function getUserCountry() {
-                    var countryField = document.getElementById("countryField").value;
-                    var resultcountry = document.getElementById('resultcountry');   
+    function getUserCountry() {
+        var countryField = document.getElementById("countryField").value;
+        var resultcountry = document.getElementById('resultcountry');
 
-                    resultcountry.textContent = 'Your new country is: ' + countryField;
-}
-// use an eventlistener for the event
- var subButtoncountry = document.getElementById('subButtoncountry');
-subButtoncountry.addEventListener('click', getUserCountry, false);
+        resultcountry.textContent = 'Your new country is: ' + countryField;
+    }
+    // use an eventlistener for the event
+    var subButtoncountry = document.getElementById('subButtoncountry');
+    subButtoncountry.addEventListener('click', getUserCountry, false);
 
-//save value into local storage so that it doesn't go away when we refresh the page. 
-localStorage.setItem("countryField", countryField.value);
+    //save value into local storage so that it doesn't go away when we refresh the page. 
+    localStorage.setItem("countryField", countryField.value);
 
 
     /* The save() function:
@@ -376,4 +376,5 @@ localStorage.setItem("countryField", countryField.value);
     }
 
 </script>
+
 </html>

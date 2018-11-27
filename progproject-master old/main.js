@@ -136,6 +136,66 @@ function validate(email, password) {
     return false;
 }
 
+/* signUp Function for the old registration
+function signUp() {
+    // Retrieve all data to register the new User
+    var firstname = document.getElementById("firstname").value;
+    var lastname = document.getElementById("lastname").value;
+    var birthday = document.getElementById("birthday").value;
+    var gender = $('input[name=gender]:checked').val();
+    var streetname = document.getElementById("streetname").value;
+    var streetnumber = document.getElementById("streetnumber").value;
+    var zip = document.getElementById("zip").value;
+    var city = document.getElementById("city").value;
+    var country = document.getElementById("country").value;
+    var phone = document.getElementById("phone").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var ctype = $('input[name=ctype]:checked').val();
+    var cnumber = document.getElementById("cnumber").value;
+    var cholder = document.getElementById("cholder").value;
+    var cexpiry = document.getElementById("cexpiry").value;
+    var csecurity = document.getElementById("csecurity").value;
+    var sub = JSON.parse(localStorage.getItem("sub"));
+    if (userExists(email)) {
+        alert("User is already registered. Please log in instead.");
+        window.location = "index.html#login";
+    }
+    else {
+        users = JSON.parse(localStorage.getItem("users"));
+        newUser = {
+            "firstname": firstname,
+            "lastname": lastname,
+            "birthday": birthday,
+            "gender": gender,
+            "address": {
+                "streetname": streetname,
+                "streetnumber": streetnumber,
+                "zip": zip,
+                "city": city,
+                "country": country
+            },
+            "contact": {
+                "phone": phone,
+                "email": email,
+                "password": password
+            },
+            "payment": {
+                "ctype": ctype,
+                "cnumber": cnumber,
+                "cholder": cholder,
+                "cexpiry": cexpiry,
+                "csecurity": csecurity
+            },
+            "subscription": sub
+        }
+        users.push(newUser);
+        alert("User has been registered");
+        localStorage.setItem("users", JSON.stringify(users));
+        window.location = "confirmation.html";
+    }
+}*/
+
 /*############# REGISTRATION FORM VALIDATION ############### */
 //Twinkle - My code starts here
 //The validate function should be linked to Sign up button

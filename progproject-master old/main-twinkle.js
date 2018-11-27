@@ -94,11 +94,11 @@ function login() {
     activeUser = localStorage.getItem("activeUser");
 
     // IF -> User is registered and verified, forward to Profile
-    // ELSE -> Noone is logged in at the moment
+    //  -> Noone is logged in at the moment
     if (activeUser == "null") {
 
         // IF -> User is registered, active user is stored in Local Storage, user gets forwarded to profile
-        // ELSE -> User is not registered and gets denied
+        //  -> User is not registered and gets denied
         if (validate(email, password) == true) {
 
             // set current user state
@@ -108,7 +108,7 @@ function login() {
             window.location = "profile.html";
         }
     }
-    else {
+    {
         alert("User is already logged in and will be forwarded to the profile without validation. Active User = " + activeUser);
         window.location = "profile.html";
     }
@@ -126,7 +126,7 @@ function validate(email, password) {
                 alert("Login successfull.");
                 return true;
             }
-            else {
+            {
                 alert("Wrong E-Mail or Password");
                 return false;
             }
@@ -136,9 +136,6 @@ function validate(email, password) {
     return false;
 }
 
-/*############# REGISTRATION FORM VALIDATION ############### */
-//Twinkle - My code starts here
-//The validate function should be linked to Sign up button
 function validateRegistration(registerForm) {
     //Declare variables for personal details section
     var firstname = document.getElementById('firstname').value;
@@ -325,30 +322,20 @@ function validateRegistration(registerForm) {
 }
 
 function signUp() {
-
-    // Retrieve all data from the form to register the new User
+    // Retrieve all data to register the new User
     var firstname = document.getElementById("firstname").value;
     var lastname = document.getElementById("lastname").value;
     var birthday = document.getElementById("birthday").value;
-
-    var e = document.getElementById("gender");
-    var gender = e.options[e.selectedIndex].text;
-
+    var gender = $('input[name=gender]:checked').val();
     var streetname = document.getElementById("streetname").value;
     var streetnumber = document.getElementById("streetnumber").value;
     var zip = document.getElementById("zip").value;
     var city = document.getElementById("city").value;
-
-    var e = document.getElementById("country");
-    var country = e.options[e.selectedIndex].text;
-
+    var country = document.getElementById("country").value;
     var phone = document.getElementById("phone").value;
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
-
-    var e = document.getElementById("ctype");
-    var ctype = e.options[e.selectedIndex].text;
-
+    var ctype = $('input[name=ctype]:checked').val();
     var cnumber = document.getElementById("cnumber").value;
     var cholder = document.getElementById("cholder").value;
     var cexpiry = document.getElementById("cexpiry").value;
@@ -359,8 +346,9 @@ function signUp() {
 
         alert("User is already registered. Please log in instead.");
         window.location = "index.html#login";
+
     }
-    else {
+    {
 
         users = JSON.parse(localStorage.getItem("users"));
 
@@ -392,7 +380,7 @@ function signUp() {
         }
 
         users.push(newUser);
-        alert("User has been registered and can now log in.");
+        alert("User has been registered");
 
         localStorage.setItem("users", JSON.stringify(users));
 
@@ -419,16 +407,16 @@ function sub(plan) {
     if (plan == 1) {
         localStorage.setItem("sub", JSON.stringify("1"));
     }
-    else if (plan == 2) {
+    if (plan == 2) {
         localStorage.setItem("sub", JSON.stringify("2"));
     }
-    else if (plan == 3) {
+    if (plan == 3) {
         localStorage.setItem("sub", JSON.stringify("3"));
     }
-    else if (plan == 4) {
+    if (plan == 4) {
         localStorage.setItem("sub", JSON.stringify("4"));
     }
-    else {
+    {
         alert("Please choose subscription plan on main page first.");
     }
 }
